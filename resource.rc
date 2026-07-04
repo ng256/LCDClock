@@ -1,0 +1,41 @@
+/**
+ * @file resource.rc
+ * @brief Application resources (icon, strings, manifest).
+ * @license MIT
+ * @copyright Copyright (c) 2025 Bashkardin Pavel
+ */
+
+#include <windows.h>
+#include "resource.h"
+
+IDI_MAIN ICON "clock.ico"
+
+/* Manifest for highestAvailable execution level */
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "manifest.xml"
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE           "LCD Clock"
+    IDS_TRAY_TOOLTIP        "LCD Clock"
+    IDS_MENU_EXIT           "Exit"
+    IDS_MENU_SELECT_DISPLAY "Select Display"
+    
+    IDS_ERR_NO_ADMIN        "Administrator rights required.\nPlease run as Administrator."
+    IDS_ERR_INSTALL_SERVICE "Failed to install service."
+    IDS_ERR_UNINSTALL_SERVICE "Failed to uninstall service."
+    IDS_ERR_NO_DISPLAY      "No display with signature 'S142T16' found.\nPlease check connection or specify port manually."
+    IDS_ERR_COM_INIT        "Failed to open/configure COM port %s"
+    IDS_ERR_WINDOW_CLASS    "Window class registration failed"
+    IDS_ERR_WINDOW_CREATE   "Window creation failed"
+    IDS_ERR_TRAY_ICON       "Failed to create tray icon"
+    IDS_ERR_THREAD          "Failed to create display thread"
+    IDS_ERR_MUTEX           "Another instance is already running."
+    IDS_ERR_CONFIG          "Failed to load configuration"
+
+    IDS_SUCCESS_INSTALL     "Service installed successfully."
+    IDS_SUCCESS_UNINSTALL   "Service uninstalled successfully."
+
+    IDS_SERVICE_NAME        "LCDClockService"
+    IDS_SERVICE_DISPLAY_NAME "LCD Clock Service"
+    IDS_SERVICE_DESCRIPTION "Displays current time and date on a USB LCD display"
+END

@@ -1,0 +1,35 @@
+/**
+ * @file install.rc
+ * @brief Installer resources.
+ * @license MIT
+ * @copyright Copyright (c) 2025 Bashkardin Pavel
+ */
+
+#include <windows.h>
+#include "resource_install.h"
+
+IDI_INSTALL ICON "clock.ico"
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "manifest_install.xml"
+
+STRINGTABLE
+BEGIN
+    IDS_TITLE          "LCD Clock Installer"
+    IDS_SUCCESS        "Installation completed successfully."
+    IDS_ERROR          "Installation failed."
+    IDS_COPY_ERROR     "Failed to copy files."
+    IDS_SHORTCUT_ERROR "Failed to create desktop shortcut."
+    IDS_SERVICE_ERROR  "Failed to install service."
+END
+
+IDD_INSTALL_DIALOG DIALOGEX 0, 0, 250, 120
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "LCD Clock Installer"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Select installation type:", -1, 10, 10, 220, 20
+    AUTORADIOBUTTON "Normal (tray application, desktop shortcut)", IDC_RADIO_NORMAL, 20, 35, 210, 15, WS_GROUP
+    AUTORADIOBUTTON "Windows Service (runs in background)", IDC_RADIO_SERVICE, 20, 55, 210, 15
+    DEFPUSHBUTTON   "Install", IDC_BTN_INSTALL, 70, 85, 50, 20
+    PUSHBUTTON      "Cancel", IDC_BTN_CANCEL, 130, 85, 50, 20
+END
