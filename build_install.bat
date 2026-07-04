@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-set TDM_GCC_PATH=C:\Program Files (x86)\Embarcadero\Dev-Cpp\TDM-GCC-64\bin
+set TDM_GCC_PATH=C:\TDM-GCC-64\bin
 set PATH=%PATH%;%TDM_GCC_PATH%
 
 set CC=gcc.exe
